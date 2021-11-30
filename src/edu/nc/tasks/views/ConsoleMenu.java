@@ -14,7 +14,7 @@ public class ConsoleMenu {
     /**
      * This method prints the tasks to the console
      *
-     * @param tasks the tasks from the model component
+     * @param tasks - the tasks from the model component
      */
     public void printTasks(HashMap<Integer, String> tasks) {
 
@@ -22,7 +22,15 @@ public class ConsoleMenu {
 
         return;
     }
-    
+
+    /**
+     * This method launches the main menu
+     * of the application
+     *
+     * @param controller - the controller component
+     * @throws IOException - on failing to create or
+     * write to files
+     */
     public void callMenu(TasklistManager controller) throws IOException {
 
         boolean alive = true;
@@ -147,6 +155,7 @@ public class ConsoleMenu {
                     }
 
                     if (!validFormat) {
+                        System.out.println("Сохранение списка задач было прервано");
                         break;
                     }
 

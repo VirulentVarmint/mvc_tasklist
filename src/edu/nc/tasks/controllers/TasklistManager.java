@@ -16,7 +16,7 @@ public class TasklistManager {
      * This method instantiates a new Task controller.
      *
      * @param model - model component
-     * @param view - view component
+     * @param view  - view component
      */
     public TasklistManager(Tasklist model, ConsoleMenu view) {
         this.model = model;
@@ -30,14 +30,31 @@ public class TasklistManager {
      * @return - map of tasks
      */
     public HashMap<Integer, String> getTasks() {
+
         return model.getTasks();
     }
 
+    /**
+     * This method checks if a task with a specified
+     * number exists.
+     *
+     * @param key - # to check
+     * @return boolean - whether the task exists
+     */
     public boolean existsTask(int key) {
+
         return model.getTasks().containsKey(key);
     }
 
+    /**
+     * This method gets a task with a specified
+     * number.
+     *
+     * @param key - # of the task to return
+     * @return - the task
+     */
     public String getTask(int key) {
+
         return model.getTask(key);
     }
 
@@ -45,7 +62,7 @@ public class TasklistManager {
      * This method calls the model component to
      * add a task to the map
      *
-     * @param key - # of the task
+     * @param key  - # of the task
      * @param task - the task
      */
     public void addTask(int key, String task) {
@@ -69,6 +86,7 @@ public class TasklistManager {
      * the task list to the console
      */
     public void showTasks() {
+
         view.printTasks(model.getTasks());
     }
 }

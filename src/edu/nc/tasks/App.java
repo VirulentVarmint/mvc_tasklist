@@ -23,23 +23,13 @@ import java.util.HashMap;
  * @version 1.0
  */
 public class App {
-    /**
-     * <b>Write to file</b>
-     * <p>
-     * This method is used to save the task list to a file
-     *
-     * @param path - the path to the output file
-     * @param con - the contents of the output file
-     * @return boolean - true when the operation was successful,
-     * false when it was canceled
-     * @throws IOException on failing to create the file
-     */
 
     /**
      * The entry point of application.
      *
      * @param args - input arguments
-     * @throws IOException on failing to read from file
+     * @throws IOException - on failing to create or
+     * read from file
      */
     public static void main(String[] args) throws IOException {
 

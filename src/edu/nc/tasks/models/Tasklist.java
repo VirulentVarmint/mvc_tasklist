@@ -14,6 +14,7 @@ public class Tasklist {
      * @return - tasks
      */
     public HashMap<Integer, String> getTasks() {
+
         return tasks;
     }
 
@@ -23,6 +24,7 @@ public class Tasklist {
      * @param tasks - new map to replace the tasks
      */
     public void setTasks(HashMap<Integer, String> tasks) {
+
         this.tasks = tasks;
     }
 
@@ -33,6 +35,7 @@ public class Tasklist {
      * @param task - the task
      */
     public void addTask(int key, String task) {
+
         tasks.put(key, task);
     }
 
@@ -42,6 +45,7 @@ public class Tasklist {
      * @param key - # of the task
      */
     public void removeTask(int key) {
+
         tasks.remove(key);
     }
 
@@ -52,6 +56,7 @@ public class Tasklist {
      * @return - the specified task
      */
     public String getTask(int key) {
+
         return tasks.get(key);
     }
 }
