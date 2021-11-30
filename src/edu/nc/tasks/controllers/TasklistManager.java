@@ -35,6 +35,19 @@ public class TasklistManager {
     }
 
     /**
+     * This method calls the model component to
+     * set the tasks.
+     *
+     * @param tasks - tasklist
+     */
+    public void setTasks(HashMap<Integer, String> tasks) {
+
+        model.setTasks(tasks);
+
+        return;
+    }
+
+    /**
      * This method checks if a task with a specified
      * number exists.
      *

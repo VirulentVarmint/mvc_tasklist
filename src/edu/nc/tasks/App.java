@@ -34,26 +34,29 @@ public class App {
     public static void main(String[] args) throws IOException {
 
         //mvc components
+        Tasklist tasks = new Tasklist();
+        ConsoleMenu view = new ConsoleMenu();
+        TasklistManager controller = new TasklistManager(tasks, view);
+
+
         Path file = Path.of("data.xml");
-        Tasklist tasks = new edu.nc.tasks.models.Tasklist();
+        HashMap<Integer, String> dmap;
         if (Files.exists(file)) {
             //parse xml
             ByteArrayInputStream databytes;
             databytes = new ByteArrayInputStream(Files.readAllBytes(file));
 
             XMLDecoder xmlDecoder = new XMLDecoder(databytes);
-            HashMap<Integer, String> dmap = (HashMap<Integer, String>) xmlDecoder.readObject();
-            tasks.setTasks(dmap);
+            dmap = (HashMap<Integer, String>) xmlDecoder.readObject();
 
             System.out.println("Список задач загружен из файла \"data.xml\"");
         } else {
-            tasks = new edu.nc.tasks.models.Tasklist();
-            tasks.setTasks(new HashMap<>());
+            dmap = new HashMap<Integer, String>();
 
             System.out.println("Не найден файл \"data.xml\". Создан новый список задач");
         }
-        ConsoleMenu view = new ConsoleMenu();
-        TasklistManager controller = new TasklistManager(tasks, view);
+
+        controller.setTasks(dmap);
 
         view.callMenu(controller);
 
